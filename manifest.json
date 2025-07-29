@@ -1,0 +1,23 @@
+{
+ "manifest_version": 3,
+ "name": "Consolidation Barcode Printer",
+ "version": "1.0",
+ "description": "Scrapes consolidation number and shows a print-ready barcode popup.",
+ "permissions": [
+   "scripting",
+   "activeTab"
+ ],
+ "host_permissions": [
+   "<all_urls>"
+ ],
+ "content_scripts": [
+   {
+     "matches": ["<all_urls>"],
+     "js": [
+       "vendor/jsbarcode.all.min.js",
+       "content.js"
+     ],
+     "css": ["styles.css"]
+   }
+ ]
+}

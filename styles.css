@@ -1,0 +1,65 @@
+/* 1) Full‐screen overlay dims & centers */
+#barcode-popup {
+ position: fixed;
+ inset: 0;
+ background: rgba(0,0,0,0.4);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ z-index: 9999;
+}
+
+/* 2) Popup card – inherit most styling from your site */
+#barcode-popup .popup-content {
+ position: relative;
+ background: var(--card-bg, #fff);
+ border-radius: var(--radius-lg, 8px);
+ padding: var(--spacing-lg, 16px);
+ box-shadow: var(--shadow-md, 0 4px 6px rgba(0,0,0,0.1));
+ font: inherit;
+ color: inherit;
+ text-align: center;
+ width: 360px;
+ max-width: 90%;
+}
+
+/* 3) Close button – inherits link color */
+#barcode-popup .close-btn {
+ position: absolute;
+ top: var(--spacing-sm, 8px);
+ right: var(--spacing-sm, 8px);
+ background: none;
+ border: none;
+ font-size: 1.50rem;
+ line-height: 1;
+ cursor: pointer;
+ color: inherit;
+}
+
+/* 4) Heading – inherit your site’s heading styles */
+#barcode-popup h2 {
+ margin-bottom: var(--spacing-md, 12px);
+ font: inherit;
+}
+
+/* 5) Number – bold and spaced */
+#barcode-popup .number {
+ margin: 0 0 var(--spacing-md, 12px);
+ font-weight: bold;
+}
+
+/* 6) Barcode SVG – simple bottom margin */
+#barcode-popup svg#barcode-svg {
+ margin-bottom: var(--spacing-lg, 16px);
+}
+
+/* 7) Print button – reuse .btn .btn-primary, override only colors */
+#barcode-popup button.btn.btn-primary {
+ background-color: #FFCC00 !important;  /* DHL yellow */
+ border-color:    #FFCC00 !important;
+ color:           #000      !important;  /* high-contrast black text */
+}
+#barcode-popup button.btn.btn-primary:hover {
+ background-color: #E6B800 !important;  /* slightly darker */
+ border-color:    #E6B800 !important;
+}
